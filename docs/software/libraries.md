@@ -1,19 +1,40 @@
 # Libraries
 
-Required Arduino libraries from `docs/ARDUINO_SETUP.md`.
+Required Arduino libraries and the official **HackCard** board library.
 
 ---
 
-## Install
+## Install — dependencies
 
 **Tools → Manage Libraries** in Arduino IDE:
 
 | Library | Author | Purpose |
 |---------|--------|---------|
 | **Adafruit NeoPixel** | Adafruit | 12-LED ring + WiFi RGB |
-| **ArduinoJson** | Benoit Blanchon | Config load/save |
+| **ArduinoJson** | Benoit Blanchon | Config load/save (full firmware) |
 | **Adafruit PN532** | Adafruit | NFC tag reading/writing |
 | **Adafruit BusIO** | Adafruit | Required by PN532 library |
+
+---
+
+## Install — HackCard library
+
+The official board library ships in the firmware repo:
+
+[`library/HackCard`](https://github.com/hardwarehackspace/HackCard-ESP32/tree/main/library/HackCard)
+
+1. Clone or download [HackCard-ESP32](https://github.com/hardwarehackspace/HackCard-ESP32)
+2. Copy `library/HackCard` to `Documents/Arduino/libraries/HackCard`
+3. Restart Arduino IDE
+4. Open **File → Examples → HackCard**
+
+Or: zip the `HackCard` folder → **Sketch → Include Library → Add .ZIP Library…**
+
+```cpp
+#include <HackCard.h>
+```
+
+Provides pin map (`HackCard_Pins.h`) plus drivers: `RgbRing`, `WifiLed`, `Buzzer`, `Buttons`, `Nfc`, `Ble`.
 
 ---
 
@@ -21,9 +42,10 @@ Required Arduino libraries from `docs/ARDUINO_SETUP.md`.
 
 | Library | Features |
 |---------|----------|
+| HackCard | Pin map + HAL used by examples |
 | Adafruit NeoPixel | RGB ring (GPIO 45), Wi-Fi LED (GPIO 38) |
 | Adafruit PN532 + BusIO | All NFC operations |
-| ArduinoJson | `ConfigStore` — `/config/hackcard.json` |
+| ArduinoJson | Full firmware `ConfigStore` — `/config/hackcard.json` |
 
 ---
 
@@ -40,12 +62,18 @@ These ship with the ESP32 board package — no separate install:
 
 ## Version compatibility
 
-<span class="coming-soon">Documentation coming soon</span>
+| Component | Version |
+|-----------|---------|
+| HackCard firmware / library | `0.21.2` |
+| ESP32 Arduino core | 3.x recommended |
+| Adafruit NeoPixel / PN532 / BusIO | Latest stable from Library Manager |
+| ArduinoJson | Latest stable (full firmware) |
 
-Pinned library version matrix will be added after verification on CI. Use latest stable versions from Library Manager unless a tutorial specifies otherwise.
+Pin versions in CI later if builds are automated. Prefer latest stable unless a tutorial pins a version.
 
 ---
 
 ## Source
 
-[`docs/ARDUINO_SETUP.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/docs/ARDUINO_SETUP.md)
+- [`library/HackCard`](https://github.com/hardwarehackspace/HackCard-ESP32/tree/main/library/HackCard)
+- [`docs/ARDUINO_SETUP.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/docs/ARDUINO_SETUP.md)

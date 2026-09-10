@@ -12,6 +12,7 @@
 
     ```bash
     git clone https://github.com/hardwarehackspace/HackCard-ESP32.git
+    cd HackCard-ESP32
     ```
 
 === "ZIP download"
@@ -22,11 +23,12 @@
 
 ## What to open
 
-```
-HackCard_ESP32/HackCard_ESP32.ino
-```
+| Goal | Open |
+|------|------|
+| Full product firmware (web dashboard) | `HackCard_ESP32.ino` at repo root |
+| One-feature Serial examples | Install `library/HackCard`, then **File → Examples → HackCard** |
 
-Upload this sketch via Arduino IDE.
+→ [Firmware overview](../software/firmware.md) · [Libraries](../software/libraries.md)
 
 ---
 
@@ -36,8 +38,9 @@ Upload this sketch via Arduino IDE.
 |-------|-------|
 | `FIRMWARE_VERSION` | `0.21.2` |
 | Phase | 21 (HID Payload Pack) |
+| Library | `0.21.2` |
 
-Check `config/board_config.h` in your downloaded copy.
+Check `config/board_config.h` and `library/HackCard/library.properties` in your copy.
 
 ---
 
@@ -45,13 +48,13 @@ Check `config/board_config.h` in your downloaded copy.
 
 <span class="coming-soon">Documentation coming soon</span>
 
-Pre-built `.bin` files are not yet published in the repository.
+Pre-built `.bin` files are not yet published. Flash from source with Arduino IDE for now.
 
 ---
 
 ## Configuration before upload
 
-Edit before first flash:
+Edit before first flash of the **full firmware**:
 
 | File | Purpose |
 |------|---------|

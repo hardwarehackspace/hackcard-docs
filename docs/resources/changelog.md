@@ -1,6 +1,6 @@
 # Changelog
 
-Firmware version history documented in the repository. Only verified entries included.
+Firmware version history from the [HackCard-ESP32](https://github.com/hardwarehackspace/HackCard-ESP32) repository.
 
 ---
 
@@ -9,26 +9,28 @@ Firmware version history documented in the repository. Only verified entries inc
 | Field | Source |
 |-------|--------|
 | Version string | `FIRMWARE_VERSION` in `config/board_config.h` |
-| Phase label | Phase 21 (HID Payload Pack) — `HackCard_ESP32.ino` header |
+| Phase label | Phase 21 (HID Payload Pack) |
+| Library | `library/HackCard` `0.21.2` |
 
-<span class="coming-soon">Documentation coming soon</span>
+### Highlights
 
-Detailed change list for v0.21.2 not yet in a `CHANGELOG.md` file in the firmware repo.
+- Public GitHub release: full firmware + Arduino library + examples
+- Standalone Serial examples (basics, NFC, Wi-Fi, BLE, HID, SD)
+- Real-life sketches: badge tap, guest portal, BLE card, desk status light
+- LICENSE, CHANGELOG, release README
+
+Full notes: [`CHANGELOG.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/CHANGELOG.md)
 
 ---
 
-## v0.21.1 (documented in README)
-
-From firmware `README.md`:
+## v0.21.1
 
 - PIN pop-up validation on `/hid`
 - Editable **Wi-Fi SSID**, **password**, and **Lab PIN** from `/hid` and `/settings` (saved to flash)
 
 ---
 
-## v0.20 (documented in README)
-
-From firmware `README.md`:
+## v0.20
 
 - Dedicated HID page with OS picker, Notepad, Lock, Type Text, Open URL
 
@@ -50,5 +52,5 @@ From firmware `README.md`:
 
 ## Source
 
+- [`CHANGELOG.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/CHANGELOG.md)
 - [`config/board_config.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/board_config.h)
-- [`README.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/README.md)

@@ -1,6 +1,6 @@
 # Firmware
 
-HackCard firmware is a monolithic Arduino sketch with modular apps.
+HackCard firmware is a monolithic Arduino sketch with modular apps, plus an Arduino **library** and **standalone examples**.
 
 ---
 
@@ -16,23 +16,23 @@ HackCard firmware is a monolithic Arduino sketch with modular apps.
 |-------|-------|--------|
 | `FIRMWARE_VERSION` | `0.21.2` | `config/board_config.h` |
 | Phase label | Phase 21 (HID Payload Pack) | `HackCard_ESP32.ino` header |
+| Library | `0.21.2` | `library/HackCard/library.properties` |
 
 ---
 
 ## Repository layout
 
 ```
-HackCard_ESP32/
-├── HackCard_ESP32.ino       ← Upload this sketch
+HackCard-ESP32/
+├── HackCard_ESP32.ino       ← Full firmware (web + CLI + all labs)
 ├── config/
 │   ├── board_config.h       ← Pin map (hardware)
 │   ├── user_config.h        ← Your settings
 │   └── app_registry.h       ← Feature compile switches
 ├── partitions.csv           ← Flash layout
-└── src/
-    ├── platform/hal/        ← Hardware drivers
-    ├── apps/                ← Feature modules
-    └── core/                ← Config, storage, CLI
+├── src/                     ← HAL, apps, core
+├── library/HackCard/        ← Arduino library + examples
+└── docs/                    ← Setup guides
 ```
 
 ---
@@ -55,9 +55,21 @@ Disable any app by setting its `#define` to `0`.
 
 ## Example sketches
 
-<span class="coming-soon">Documentation coming soon</span>
+Install `library/HackCard` into your Arduino libraries folder, then open **File → Examples → HackCard**.
 
-Standalone example sketches (one `.ino` per feature) are planned as a separate library package. Current workflow: upload the full `HackCard_ESP32.ino` sketch or use CLI/web commands within it.
+| Category | Sketches |
+|----------|----------|
+| Basics | Hello RGB Ring, Buzzer Tunes, BOOT Button, Wi-Fi Status LED |
+| NFC | Read UID, Tag Info, Write URL, Dump Type 2 |
+| Wi-Fi | Access Point, Scanner |
+| BLE | Advertise, Scanner |
+| USB HID | Type Hello |
+| Storage | SD Card Info |
+| Real life | Conference Badge Tap, Guest Portal, BLE Business Card, Desk Status Light |
+
+Examples use **Serial Monitor** (115200) — no web UI required. The full `HackCard_ESP32.ino` sketch remains the dashboard experience.
+
+→ [Library install notes](libraries.md) · [Firmware download](../resources/firmware.md)
 
 ---
 
@@ -65,6 +77,7 @@ Standalone example sketches (one `.ino` per feature) are planned as a separate l
 
 | File | Purpose |
 |------|---------|
-| [`HackCard_ESP32.ino`](https://github.com/hardwarehackspace/HackCard-ESP32) | Main entry |
+| [`HackCard_ESP32.ino`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/HackCard_ESP32.ino) | Main firmware entry |
+| [`library/HackCard`](https://github.com/hardwarehackspace/HackCard-ESP32/tree/main/library/HackCard) | Library + examples |
 | [`app_registry.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/app_registry.h) | Feature toggles |
 | [`user_config.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/user_config.h) | User settings |
