@@ -29,7 +29,7 @@ Credit-card sized ESP32-S3 security lab hardware for backers and developers.
 <li>**[Hardware version](getting-started/hardware-versions.md)** — identify your board</li>
 <li>**[First setup](getting-started/first-setup.md)** — connect USB, install tools</li>
 <li>**[First program](getting-started/first-program.md)** — upload firmware</li>
-<li>**[Features](features/nfc-reader.md)** — NFC, Wi-Fi, RGB, buzzer, SD</li>
+<li>**[Feature guides](features/index.md)** — RGB, buzzer, Wi-Fi, NFC, SD, BLE, HID with examples</li>
 <li>**[Firmware download](resources/firmware.md)** — source code repository</li>
 <li>**[Troubleshooting](troubleshooting.md)** — if something fails</li>
 

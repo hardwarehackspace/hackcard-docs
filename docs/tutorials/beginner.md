@@ -33,5 +33,6 @@ Start here after [First Program](../getting-started/first-program.md).
 
 ## Next
 
+- [Feature Guides — all examples](../features/index.md) — RGB patterns, buzzer tunes, Wi-Fi, NFC, SD, BLE, HID
 - [CLI Reference](../software/cli-reference.md)
 - [Quick Reference](../resources/quick-reference.md)
