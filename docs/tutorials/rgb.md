@@ -59,6 +59,33 @@ Re-upload after change.
 
 ---
 
+## Tutorial: CLI ring control
+
+**Source:** `CliEngine::printHelp()`, `LedBuzzerApp.cpp`
+
+<div class="code-meta" markdown="1">
+
+**Access:** Web terminal or Serial (if enabled)
+
+</div>
+
+```text
+led idle
+led success
+led error
+led scan
+led boot
+led demo 3 0 120 255
+led stop
+settings brightness 80
+```
+
+Patterns from `LedBuzzerApp`: `idle`, `success`, `error`, `scan`, `boot`, `pointer`, demo patterns 1–12.
+
+**Expected result:** Ring changes pattern immediately; brightness persists via settings.
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>

@@ -91,10 +91,12 @@ nav:
       - Hardware Versions: getting-started/hardware-versions.md
       - First Setup: getting-started/first-setup.md
       - First Program: getting-started/first-program.md
+      - Backer Checklist: getting-started/backer-checklist.md
 
   - Hardware:
       - hardware/overview.md
       - Pinout: hardware/pinout.md
+      - Component Map: hardware/component-map.md
       - ESP32: hardware/esp32.md
       - SD Card: hardware/sd-card.md
       - NFC: hardware/nfc.md
@@ -107,6 +109,8 @@ nav:
       - Arduino Setup: software/arduino-setup.md
       - Libraries: software/libraries.md
       - Configuration: software/configuration.md
+      - Partition Table: software/partition-table.md
+      - Storage & Logs: software/storage-and-logs.md
       - CLI Reference: software/cli-reference.md
       - Web Dashboard: software/web-dashboard.md
       - Updates: software/updates.md
@@ -117,11 +121,15 @@ nav:
       - SD Card: features/sd-card.md
       - RGB: features/rgb.md
       - Buzzer: features/buzzer.md
+      - BLE (Lab): features/ble.md
+      - USB HID (Lab): features/usb-hid.md
 
   - Tutorials:
       - tutorials/beginner.md
       - Beginner — Web Terminal: tutorials/beginner/web-terminal.md
       - Beginner — Diagnostics: tutorials/beginner/diagnostics.md
+      - Beginner — Personalize Profile: tutorials/beginner/personalize-profile.md
+      - Beginner — Device Modes: tutorials/beginner/device-modes.md
       - Wi-Fi: tutorials/wifi.md
       - NFC: tutorials/nfc.md
       - SD Card: tutorials/sd-card.md
@@ -140,6 +148,8 @@ nav:
       - Schematics: resources/schematics.md
       - Pinout: resources/pinout.md
       - Datasheets: resources/datasheets.md
+      - Quick Reference: resources/quick-reference.md
+      - Changelog: resources/changelog.md
       - Legal & Ethical Use: resources/legal-ethical-use.md
 
 extra:

@@ -7,7 +7,8 @@ Credit-card sized ESP32-S3 security lab hardware for backers and developers.
 <span class="version-badge">FW v0.21.2</span>
 
 [Getting Started :octicons-arrow-right-24:](getting-started/introduction.md){ .md-button .md-button--primary }
-[Pinout :octicons-arrow-right-24:](hardware/pinout.md){ .md-button }
+[Backer Checklist :octicons-arrow-right-24:](getting-started/backer-checklist.md){ .md-button }
+[Quick Reference :octicons-arrow-right-24:](resources/quick-reference.md){ .md-button }
 
 </div>
 

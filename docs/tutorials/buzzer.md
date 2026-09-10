@@ -40,6 +40,33 @@ Access `http://192.168.4.1/apps` → buzzer tune previews.
 
 ---
 
+## Tutorial: CLI buzzer control
+
+**Source:** `CliEngine::printHelp()`
+
+<div class="code-meta" markdown="1">
+
+**Access:** Web terminal · **GPIO:** 37
+
+</div>
+
+```text
+buzzer success
+buzzer error
+buzzer boot
+buzzer nfc_ready
+buzzer tune 3
+settings buzzer on
+settings buzzer off
+settings tune success 2
+```
+
+Tune index 0–7 for `settings tune` and `buzzer tune`.
+
+**Expected result:** Audible tone from piezo buzzer (if `BUZZER_ENABLED` true).
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>
