@@ -1,0 +1,27 @@
+/* HackCard docs — light branding */
+
+:root {
+  --hackcard-accent: #7c4dff;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset .admonition.tip {
+  border-color: var(--hackcard-accent);
+}
+
+/* Grid cards on home page */
+.grid.cards > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  list-style: none;
+}

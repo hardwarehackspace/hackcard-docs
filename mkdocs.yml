@@ -1,0 +1,83 @@
+# HackCard Documentation Site
+# Live URL after deploy: https://<your-github-username>.github.io/hackcard-docs/
+# Update site_url below with your actual GitHub username.
+
+site_name: HackCard ESP32
+site_description: Official documentation — setup, pin map, examples, and library guide
+site_url: https://hardwarehackspace.github.io/hackcard-docs/
+repo_url: https://github.com/hardwarehackspace/hackcard-docs
+repo_name: HackCard Docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Hardware:
+      - Pin Map: hardware/pin-map.md
+      - Board Overview: hardware/board-overview.md
+  - Examples:
+      - Overview: examples/index.md
+      - NFC Read UID: examples/nfc-read-uid.md
+      - RGB Ring Patterns: examples/rgb-ring-patterns.md
+  - Troubleshooting: troubleshooting.md
+  - Legal: legal.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hardwarehackspace/hackcard-docs
+
+copyright: Copyright &copy; 2026 HackCard
