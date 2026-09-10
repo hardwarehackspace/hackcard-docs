@@ -1,29 +1,37 @@
 # Datasheets
 
-<span class="coming-soon">Documentation coming soon</span>
+Manufacturer documentation for components identified in the HackCard firmware repository.
 
-Curated datasheet links for HackCard components will be published here.
-
----
-
-## Components (reference)
-
-These parts are identified in the firmware repository — datasheet links to be verified and added:
-
-| Component | Identified in |
-|-----------|---------------|
-| ESP32-S3FH4R2 | `board_config.h` |
-| PN532 | `HalNfc`, `app_registry.h` |
-| WS2812 | `HalRgbRing`, `board_config.h` |
+!!! note "External links"
+    These are **manufacturer** references — verify against the exact parts on your PCB revision.
 
 ---
 
-## External references (unverified links)
+## Identified components
 
-Until official datasheet page is complete, refer to manufacturer documentation for:
+| Component | ID in firmware | Manufacturer documentation |
+|-----------|----------------|---------------------------|
+| MCU | ESP32-S3FH4R2 | [Espressif ESP32-S3 Series](https://www.espressif.com/en/products/socs/esp32-s3) |
+| NFC controller | PN532 | [NXP PN532 Product Page](https://www.nxp.com/products/rfid-nfc/nfc-hf/nfc-readers/wmp/product:PN5321A) |
+| RGB LEDs | WS2812 | [Worldsemi WS2812 Datasheet (PDF)](https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf) |
 
-- Espressif ESP32-S3 series
-- NXP PN532
-- Worldsemi WS2812
+---
 
-Do not rely on third-party links here until verified by maintainers.
+## HackCard-specific docs
+
+| Resource | Link |
+|----------|------|
+| Pinout | [Hardware → Pinout](../hardware/pinout.md) |
+| GPIO source | [`board_config.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/board_config.h) |
+| Schematics | [Schematics](schematics.md) — <span class="coming-soon">coming soon</span> |
+
+---
+
+## ESP32 Arduino core
+
+| Resource | Link |
+|----------|------|
+| Board package | [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
+| Install URL | `https://espressif.github.io/arduino-esp32/package_esp32_index.json` |
+
+From `docs/ARDUINO_SETUP.md` (via installation guide).

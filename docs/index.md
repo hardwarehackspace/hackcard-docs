@@ -100,4 +100,20 @@ Credit-card sized ESP32-S3 security lab hardware for backers and developers.
 
     [:octicons-arrow-right-24: Tutorials](tutorials/beginner.md)
 
+- :material-console:{ .lg .middle } **CLI Reference**
+
+    ---
+
+    Full command list from firmware
+
+    [:octicons-arrow-right-24: Commands](software/cli-reference.md)
+
+- :material-web:{ .lg .middle } **Web Dashboard**
+
+    ---
+
+    Pages and web terminal at 192.168.4.1
+
+    [:octicons-arrow-right-24: Web UI](software/web-dashboard.md)
+
 </div>

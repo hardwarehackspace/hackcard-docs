@@ -98,6 +98,7 @@ nav:
       - ESP32: hardware/esp32.md
       - SD Card: hardware/sd-card.md
       - NFC: hardware/nfc.md
+      - Buttons & Reset: hardware/buttons.md
       - Power: hardware/power.md
 
   - Software:
@@ -105,6 +106,9 @@ nav:
       - Firmware: software/firmware.md
       - Arduino Setup: software/arduino-setup.md
       - Libraries: software/libraries.md
+      - Configuration: software/configuration.md
+      - CLI Reference: software/cli-reference.md
+      - Web Dashboard: software/web-dashboard.md
       - Updates: software/updates.md
 
   - Features:
@@ -116,12 +120,16 @@ nav:
 
   - Tutorials:
       - tutorials/beginner.md
+      - Beginner — Web Terminal: tutorials/beginner/web-terminal.md
+      - Beginner — Diagnostics: tutorials/beginner/diagnostics.md
       - Wi-Fi: tutorials/wifi.md
       - NFC: tutorials/nfc.md
       - SD Card: tutorials/sd-card.md
       - RGB: tutorials/rgb.md
       - Buzzer: tutorials/buzzer.md
       - Advanced: tutorials/advanced.md
+      - Advanced — USB HID: tutorials/advanced/usb-hid.md
+      - Advanced — BLE Contact: tutorials/advanced/ble-contact-card.md
 
   - Troubleshooting: troubleshooting.md
   - FAQ: faq.md
@@ -132,6 +140,7 @@ nav:
       - Schematics: resources/schematics.md
       - Pinout: resources/pinout.md
       - Datasheets: resources/datasheets.md
+      - Legal & Ethical Use: resources/legal-ethical-use.md
 
 extra:
   generator: false

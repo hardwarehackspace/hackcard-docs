@@ -85,13 +85,41 @@ nfc write url https://example.com
 
 ---
 
+## Tutorial: NFC tag info
+
+<div class="code-meta" markdown="1">
+
+**Hardware:** External NFC tag · **Libraries:** Adafruit PN532, BusIO
+
+</div>
+
+```text
+nfc info
+```
+
+**Expected result:** Tag family and NDEF preview on terminal (from `CliEngine` — `nfc info`).
+
+**Source:** [`CliEngine.cpp`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/src/core/CliEngine.cpp)
+
+---
+
+## Tutorial: Dump Type 2 tag
+
+```text
+nfc dump
+```
+
+**Expected result:** Page dump saved to storage (`/nfc/dumps/` on SD, flash otherwise).
+
+**Source:** [`NfcDumpApp.cpp`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/src/apps/nfc/NfcDumpApp.cpp)
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>
 
 - Standalone `NFC_Read_UID.ino` example sketch
-- NFC dump tutorial
-- NFC info / NDEF preview tutorial
 
 ---
 

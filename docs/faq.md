@@ -40,7 +40,11 @@ No for basic use. SD enables Full Mode with logs and dump storage. See [SD Card 
 
 ### Why is Serial Monitor empty?
 
-`CLI_SERIAL_ENABLED` defaults to `0`. Use web terminal at `http://192.168.4.1/terminal` or enable serial CLI in `app_registry.h`.
+`CLI_SERIAL_ENABLED` defaults to `0`. Use web terminal at `http://192.168.4.1/terminal` or enable serial CLI in `app_registry.h`. See [Web Terminal tutorial](tutorials/beginner/web-terminal.md).
+
+### Where is the full command list?
+
+[CLI Reference](software/cli-reference.md) — extracted from firmware `CliEngine::printHelp()`.
 
 ---
 

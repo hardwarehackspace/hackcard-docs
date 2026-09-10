@@ -57,10 +57,41 @@ Run after connecting to AP (web terminal) or via Serial if `CLI_SERIAL_ENABLED =
 
 ---
 
+## Tutorial: Scan nearby networks
+
+<div class="code-meta" markdown="1">
+
+**Hardware:** HackCard · **Access:** Web terminal or `/wifi`
+
+</div>
+
+```text
+wifi scan
+```
+
+**Expected result:** List of nearby SSIDs with RSSI. Results saved to `/wifi/last_scan.json` when storage available.
+
+After STA connect tests, firmware restores AP (`WifiScannerApp`).
+
+**Source:** [`WifiScannerApp.cpp`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/src/apps/wifi/WifiScannerApp.cpp)
+
+---
+
+## Tutorial: Change AP settings
+
+```text
+wifi ap show
+wifi ap set ssid MyHackCard pass mypass1234
+```
+
+**Expected result:** Hotspot SSID/password updated live.
+
+**Source:** [`CliEngine.cpp`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/src/core/CliEngine.cpp)
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>
 
-- Wi-Fi network scan tutorial
 - Captive portal walkthrough
-- AP settings change tutorial
