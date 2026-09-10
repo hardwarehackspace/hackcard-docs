@@ -1,14 +1,22 @@
-# HackCard Documentation Site
+# HackCard Documentation
 
-Live documentation for HackCard ESP32 — built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and hosted on **GitHub Pages**.
+Professional hardware documentation for HackCard ESP32 — built with **MkDocs Material**, deployed to **GitHub Pages**.
 
-## Live URL
+## Live site
 
-After deployment:
+**https://hardwarehackspace.github.io/hackcard-docs/**
 
-```
-https://hardwarehackspace.github.io/hackcard-docs/
-```
+## Sections
+
+| Tab | Content |
+|-----|---------|
+| Getting Started | Requirements, Arduino setup, first flash |
+| Features | NFC, Wi-Fi, BLE, RGB, HID, SD |
+| Tutorials | Step-by-step guides with code |
+| Software | Library, examples, config, partitions |
+| Pinout | GPIO reference + board photos |
+| Troubleshooting | Upload, Wi-Fi, NFC, Serial |
+| Resources | FAQ, legal, how to add docs |
 
 ## Local preview
 
@@ -22,54 +30,19 @@ mkdocs serve
 
 Open http://127.0.0.1:8000
 
-## Deploy to GitHub Pages
+## Deploy
 
-### 1. Update your username
+Push to `main` — GitHub Actions publishes automatically.
 
-Configured for GitHub user **hardwarehackspace** in `mkdocs.yml`.
+## Add a tutorial
 
-### 2. Create GitHub repo
+See [Adding Documentation](docs/resources/adding-documentation.md):
 
-```powershell
-cd hackcard-docs
-git init
-git add .
-git commit -m "Initial HackCard documentation site"
-gh repo create hackcard-docs --public --source=. --push
-```
+1. Create `docs/tutorials/my-tutorial.md`
+2. Add to `mkdocs.yml` nav
+3. Update `docs/tutorials/index.md`
+4. `git push`
 
-Or create **hackcard-docs** manually on github.com, then:
+## Theme
 
-```powershell
-git remote add origin https://github.com/hardwarehackspace/hackcard-docs.git
-git branch -M main
-git push -u origin main
-```
-
-### 3. Enable GitHub Pages
-
-1. Repo → **Settings** → **Pages**
-2. **Build and deployment** → Source: **GitHub Actions**
-3. Push to `main` — workflow `.github/workflows/deploy.yml` publishes automatically
-
-First deploy takes 1–3 minutes. URL appears under Settings → Pages.
-
-## Add product photos
-
-Place images in `docs/assets/product/` and reference in markdown:
-
-```markdown
-![HackCard front](../assets/product/hackcard-front.jpg)
-```
-
-## Structure
-
-```
-docs/
-├── index.md              Home
-├── getting-started.md    Flash guide
-├── hardware/             Pin map, board
-├── examples/             One page per sketch
-├── troubleshooting.md
-└── legal.md
-```
+Dark technical design with yellow accents — customized in `docs/stylesheets/extra.css`.

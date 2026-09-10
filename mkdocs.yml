@@ -1,12 +1,11 @@
-# HackCard Documentation Site
-# Live URL after deploy: https://<your-github-username>.github.io/hackcard-docs/
-# Update site_url below with your actual GitHub username.
+# HackCard Hardware Documentation
+# Live: https://hardwarehackspace.github.io/hackcard-docs/
 
-site_name: HackCard ESP32
-site_description: Official documentation — setup, pin map, examples, and library guide
+site_name: HackCard Docs
+site_description: Official HackCard ESP32 hardware documentation — setup, features, tutorials, and pinout
 site_url: https://hardwarehackspace.github.io/hackcard-docs/
 repo_url: https://github.com/hardwarehackspace/hackcard-docs
-repo_name: HackCard Docs
+repo_name: hackcard-docs
 edit_uri: edit/main/docs/
 
 theme:
@@ -14,33 +13,41 @@ theme:
   logo: assets/logo.svg
   favicon: assets/logo.svg
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
-      accent: amber
-      toggle:
-        icon: material/brightness-4
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
-      accent: amber
+    - scheme: slate
+      primary: black
+      accent: yellow
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
+    - scheme: default
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - navigation.footer
+    - navigation.indexes
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
     - toc.follow
+    - toc.integrate
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\-]+'
 
 markdown_extensions:
   - admonition
@@ -53,31 +60,80 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
   - tables
+  - def_list
+  - footnotes
   - toc:
       permalink: true
+      toc_depth: 3
 
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/extra.js
+
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Hardware:
-      - Pin Map: hardware/pin-map.md
-      - Board Overview: hardware/board-overview.md
-  - Examples:
-      - Overview: examples/index.md
-      - NFC Read UID: examples/nfc-read-uid.md
-      - RGB Ring Patterns: examples/rgb-ring-patterns.md
-  - Troubleshooting: troubleshooting.md
-  - Legal: legal.md
+
+  - Getting Started:
+      - getting-started/index.md
+      - What You Need: getting-started/requirements.md
+      - Arduino Setup: getting-started/arduino-setup.md
+      - First Flash: getting-started/first-flash.md
+
+  - Features:
+      - features/index.md
+      - NFC / RFID: features/nfc.md
+      - Wi-Fi Lab: features/wifi.md
+      - Bluetooth LE: features/ble.md
+      - RGB & Buzzer: features/rgb-and-buzzer.md
+      - USB HID: features/usb-hid.md
+      - SD Storage: features/storage.md
+
+  - Tutorials:
+      - tutorials/index.md
+      - NFC Read UID: tutorials/nfc-read-uid.md
+      - RGB Ring Patterns: tutorials/rgb-ring-patterns.md
+      - Wi-Fi AP Startup: tutorials/wifi-ap-startup.md
+      - Write NFC URL Tag: tutorials/nfc-write-url.md
+
+  - Software:
+      - software/index.md
+      - Library Overview: software/library-overview.md
+      - Example Sketches: software/example-sketches.md
+      - Configuration: software/configuration.md
+      - Partition Table: software/partition-table.md
+
+  - Pinout:
+      - pinout/index.md
+      - GPIO Reference: pinout/gpio-reference.md
+      - Board Layout: pinout/board-layout.md
+
+  - Troubleshooting:
+      - troubleshooting/index.md
+      - Upload Issues: troubleshooting/upload-issues.md
+      - Wi-Fi Issues: troubleshooting/wifi-issues.md
+      - NFC Issues: troubleshooting/nfc-issues.md
+      - Serial Monitor: troubleshooting/serial-monitor.md
+
+  - Resources:
+      - resources/index.md
+      - Repository Links: resources/repository-links.md
+      - FAQ: resources/faq.md
+      - Legal & Ethical Use: resources/legal-ethical-use.md
+      - Adding Documentation: resources/adding-documentation.md
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hardwarehackspace/hackcard-docs
+      name: HackCard Docs on GitHub
 
-copyright: Copyright &copy; 2026 HackCard
+copyright: Copyright &copy; 2026 HackCard — Hardware documentation

@@ -1,27 +1,254 @@
-/* HackCard docs — light branding */
+/* ═══════════════════════════════════════════════════════
+   HackCard Docs — Dark technical theme, yellow accents
+   ═══════════════════════════════════════════════════════ */
 
-:root {
-  --hackcard-accent: #7c4dff;
+:root,
+[data-md-color-scheme="slate"] {
+  --hackcard-yellow: #ffc107;
+  --hackcard-yellow-dim: #e6ac00;
+  --hackcard-bg: #0d1117;
+  --hackcard-surface: #161b22;
+  --hackcard-border: #30363d;
+  --hackcard-text-muted: #8b949e;
+  --md-primary-fg-color: #0d1117;
+  --md-accent-fg-color: var(--hackcard-yellow);
+  --md-default-bg-color: var(--hackcard-bg);
+  --md-default-fg-color: #e6edf3;
+  --md-code-bg-color: #1c2128;
+  --md-footer-bg-color: #010409;
 }
 
-.md-typeset h1 {
+[data-md-color-scheme="default"] {
+  --hackcard-yellow: #f59e0b;
+  --md-accent-fg-color: var(--hackcard-yellow);
+}
+
+/* Header */
+.md-header {
+  background-color: #010409;
+  border-bottom: 1px solid var(--hackcard-border);
+}
+
+.md-header__title {
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.md-typeset .admonition.tip {
-  border-color: var(--hackcard-accent);
+/* Tabs — yellow underline on active */
+.md-tabs {
+  background-color: #010409;
+  border-bottom: 1px solid var(--hackcard-border);
 }
 
-/* Grid cards on home page */
+.md-tabs__link--active {
+  color: var(--hackcard-yellow) !important;
+  border-bottom: 2px solid var(--hackcard-yellow);
+}
+
+.md-tabs__link:hover {
+  color: var(--hackcard-yellow-dim) !important;
+}
+
+/* Sidebar */
+.md-sidebar__inner {
+  border-right: 1px solid var(--hackcard-border);
+}
+
+.md-nav__link--active {
+  color: var(--hackcard-yellow) !important;
+  font-weight: 600;
+}
+
+/* Headings */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  border-bottom: 2px solid var(--hackcard-border);
+  padding-bottom: 0.4em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  border-left: 3px solid var(--hackcard-yellow);
+  padding-left: 0.75rem;
+}
+
+/* Code blocks */
+.md-typeset code {
+  color: var(--hackcard-yellow-dim);
+  background-color: #1c2128;
+  border: 1px solid var(--hackcard-border);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
+.md-typeset pre > code {
+  border: none;
+  color: inherit;
+}
+
+.highlight .copy-icon,
+.highlight .success-icon {
+  color: var(--hackcard-yellow);
+}
+
+/* Admonitions — yellow tip border */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--hackcard-yellow);
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(255, 193, 7, 0.08);
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--hackcard-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #161b22;
+  color: var(--hackcard-yellow);
+  font-weight: 600;
+  border-bottom: 2px solid var(--hackcard-yellow);
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Hero on home page */
+.hackcard-hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+  border: 1px solid var(--hackcard-border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hackcard-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(255, 193, 7, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hackcard-hero h1 {
+  border: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  font-size: 2.2rem;
+}
+
+.hackcard-hero p {
+  color: var(--hackcard-text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem;
+  max-width: 640px;
+}
+
+.hackcard-hero .md-button--primary {
+  background-color: var(--hackcard-yellow);
+  color: #0d1117;
+  border: none;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.hackcard-hero .md-button--primary:hover {
+  background-color: var(--hackcard-yellow-dim);
+  color: #0d1117;
+}
+
+/* Feature cards grid */
 .grid.cards > ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
+  padding: 0;
 }
 
 .grid.cards > ul > li {
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.5rem;
-  padding: 1rem;
+  background: var(--hackcard-surface);
+  border: 1px solid var(--hackcard-border);
+  border-radius: 8px;
+  padding: 1.25rem;
   list-style: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grid.cards > ul > li:hover {
+  border-color: var(--hackcard-yellow);
+  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.15);
+}
+
+/* Hardware images */
+.hardware-image {
+  border: 1px solid var(--hackcard-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.hardware-image img {
+  width: 100%;
+  display: block;
+}
+
+.hardware-image figcaption {
+  background: var(--hackcard-surface);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: var(--hackcard-text-muted);
+  border-top: 1px solid var(--hackcard-border);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Spec badge */
+.spec-badge {
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.12);
+  color: var(--hackcard-yellow);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 4px;
+  padding: 0.15em 0.6em;
+  font-size: 0.8em;
+  font-weight: 600;
+  font-family: var(--md-code-font);
+}
+
+/* Footer prev/next */
+.md-footer-meta {
+  background-color: #010409;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .hackcard-hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .hackcard-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }

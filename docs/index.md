@@ -1,98 +1,123 @@
-# HackCard ESP32 Documentation
+<div class="hackcard-hero" markdown="1">
 
-Welcome to the official **HackCard ESP32** guide — your live, clickable manual for setup, hardware, example sketches, and development.
+# HackCard ESP32
 
-!!! tip "New to HackCard?"
-    Start with **[Getting Started](getting-started.md)** — install Arduino IDE, flash your first example, and confirm Serial output in about 15 minutes.
+Pocket-sized ESP32-S3 security lab hardware — NFC, Wi-Fi, BLE, RGB, and USB HID in a credit-card form factor.
 
----
+[Get Started :octicons-arrow-right-24:](getting-started/index.md){ .md-button .md-button--primary }
+[View Pinout :octicons-arrow-right-24:](pinout/index.md){ .md-button }
 
-## What is HackCard?
+</div>
 
-HackCard is a pocket-sized **ESP32-S3 security lab board** with:
+## Overview
 
-| Feature | Hardware |
-|---------|----------|
-| **NFC** | PN532 (read, write, dump, clone lab) |
-| **Wi-Fi** | AP mode, scan, captive portal, lab demos |
-| **BLE** | Scan, advertise, contact card |
-| **RGB** | 12-LED ring + Wi-Fi status LED |
-| **USB HID** | Keyboard / mouse payloads to connected PC |
-| **Storage** | microSD (optional) + onboard flash |
+HackCard is a custom **ESP32-S3FH4R2** PCB designed for hands-on security research and embedded development. Firmware ships as an **Arduino library with example sketches** — flash, learn, and build your own applications.
 
-Firmware is delivered as an **Arduino library + example sketches** — you flash and build your own applications.
+<div class="image-grid" markdown="1">
 
----
+<figure class="hardware-image" markdown="1">
+![HackCard front render — Wi-Fi icon, RGB ring, NFC zone](assets/hardware/hackcard-front-render.png)
+<figcaption>Front render — Wi-Fi status LED, 12-LED RGB ring, NFC tap zone</figcaption>
+</figure>
 
-## Quick links
-
-<div class="grid cards" markdown>
-
--   :material-rocket-launch-outline:{ .lg .middle } **Getting Started**
-
-    ---
-
-    Install tools, board settings, and flash your first sketch.
-
-    [:octicons-arrow-right-24: Start here](getting-started.md)
-
--   :material-map-outline:{ .lg .middle } **Pin Map**
-
-    ---
-
-    GPIO reference for HackCard PCB.
-
-    [:octicons-arrow-right-24: View pins](hardware/pin-map.md)
-
--   :material-code-braces:{ .lg .middle } **Examples**
-
-    ---
-
-    One sketch per feature — NFC, Wi-Fi, BLE, RGB, HID.
-
-    [:octicons-arrow-right-24: Browse examples](examples/index.md)
-
--   :material-wrench-outline:{ .lg .middle } **Troubleshooting**
-
-    ---
-
-    Upload errors, Wi-Fi issues, NFC not detected.
-
-    [:octicons-arrow-right-24: Fix problems](troubleshooting.md)
+<figure class="hardware-image" markdown="1">
+![HackCard back PCB — NFC antenna coil, ESP32-S3, USB-C, SD slot](assets/hardware/hackcard-back-pcb.png)
+<figcaption>Back PCB — NFC antenna coil, ESP32-S3, USB-C, SD card, buzzer</figcaption>
+</figure>
 
 </div>
 
 ---
 
-## Documentation map
+## Specifications
+
+| Spec | Value |
+|------|-------|
+| MCU | ESP32-S3FH4R2 |
+| Flash | 4 MB |
+| PSRAM | 2 MB (OPI) |
+| Wireless | Wi-Fi 2.4 GHz + BLE 5 |
+| NFC | PN532 (ISO14443) |
+| LEDs | 12× WS2812 ring + 1× status |
+| Audio | Piezo buzzer |
+| Storage | microSD (SPI, optional) |
+| USB | USB-C (CDC + HID) |
+| Firmware | `v0.21.2` |
+
+---
+
+## Documentation sections
+
+<div class="grid cards" markdown="1">
+
+-   :material-rocket-launch-outline:{ .lg .middle } **Getting Started**
+
+    ---
+
+    Install Arduino IDE, board settings, and flash your first sketch.
+
+    [:octicons-arrow-right-24: Start here](getting-started/index.md)
+
+-   :material-chip:{ .lg .middle } **Features**
+
+    ---
+
+    NFC, Wi-Fi lab, BLE, RGB ring, USB HID, and SD storage.
+
+    [:octicons-arrow-right-24: Explore features](features/index.md)
+
+-   :material-school-outline:{ .lg .middle } **Tutorials**
+
+    ---
+
+    Step-by-step guides with code, photos, and expected output.
+
+    [:octicons-arrow-right-24: Browse tutorials](tutorials/index.md)
+
+-   :material-code-braces:{ .lg .middle } **Software**
+
+    ---
+
+    Library structure, example sketches, config, and partitions.
+
+    [:octicons-arrow-right-24: Software docs](software/index.md)
+
+-   :material-map-outline:{ .lg .middle } **Pinout**
+
+    ---
+
+    GPIO reference and board layout with hardware photos.
+
+    [:octicons-arrow-right-24: View pinout](pinout/index.md)
+
+-   :material-wrench-outline:{ .lg .middle } **Troubleshooting**
+
+    ---
+
+    Upload errors, Wi-Fi, NFC, and Serial Monitor fixes.
+
+    [:octicons-arrow-right-24: Fix issues](troubleshooting/index.md)
+
+</div>
+
+---
+
+## Quick start path
 
 ```mermaid
 flowchart LR
-    A[Unbox] --> B[Getting Started]
-    B --> C[Flash Boot example]
-    C --> D{Pick a path}
-    D --> E[Examples by feature]
-    D --> F[Pin Map + Hardware]
-    D --> G[Build custom app]
-    E --> H[Library API - coming soon]
+    A[Install Arduino] --> B[Install libraries]
+    B --> C[Flash first example]
+    C --> D[Serial Monitor 115200]
+    D --> E[Pick a tutorial]
+    E --> F[Build custom app]
 ```
 
----
-
-## Current firmware version
-
-| Item | Value |
-|------|-------|
-| Version | `0.21.2` |
-| MCU | ESP32-S3FH4R2 (4 MB flash, 2 MB PSRAM) |
-| IDE | Arduino IDE 2.x + ESP32 board package |
+!!! tip "New hardware photos coming"
+    More real product photos will be added to the [Board Layout](pinout/board-layout.md) page as they become available.
 
 ---
 
-## Need the source code?
+## Source code
 
-Firmware and example sketches live in the **[HackCard-ESP32](https://github.com/hardwarehackspace/HackCard-ESP32)** repository on GitHub.
-
----
-
-*This site is the product manual — always up to date, no PDF required.*
+Firmware repository: **[HackCard-ESP32](https://github.com/hardwarehackspace/HackCard-ESP32)** on GitHub.
