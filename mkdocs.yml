@@ -1,8 +1,9 @@
-# HackCard Hardware Documentation
+# HackCard ESP32 — Official Documentation
+# Source of truth: HackCard-ESP32 firmware repository
 # Live: https://hardwarehackspace.github.io/hackcard-docs/
 
 site_name: HackCard Docs
-site_description: Official HackCard ESP32 hardware documentation — setup, features, tutorials, and pinout
+site_description: Official documentation for HackCard ESP32-S3 hardware — Kickstarter backer and developer guide
 site_url: https://hardwarehackspace.github.io/hackcard-docs/
 repo_url: https://github.com/hardwarehackspace/hackcard-docs
 repo_name: hackcard-docs
@@ -28,11 +29,14 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.path
     - navigation.top
     - navigation.footer
     - navigation.indexes
@@ -41,9 +45,9 @@ theme:
     - search.share
     - content.code.copy
     - content.code.annotate
+    - content.action.edit
     - content.tabs.link
     - toc.follow
-    - toc.integrate
 
 plugins:
   - search:
@@ -82,58 +86,60 @@ nav:
   - Home: index.md
 
   - Getting Started:
-      - getting-started/index.md
-      - What You Need: getting-started/requirements.md
-      - Arduino Setup: getting-started/arduino-setup.md
-      - First Flash: getting-started/first-flash.md
+      - getting-started/introduction.md
+      - What's Included: getting-started/whats-included.md
+      - Hardware Versions: getting-started/hardware-versions.md
+      - First Setup: getting-started/first-setup.md
+      - First Program: getting-started/first-program.md
 
-  - Features:
-      - features/index.md
-      - NFC / RFID: features/nfc.md
-      - Wi-Fi Lab: features/wifi.md
-      - Bluetooth LE: features/ble.md
-      - RGB & Buzzer: features/rgb-and-buzzer.md
-      - USB HID: features/usb-hid.md
-      - SD Storage: features/storage.md
-
-  - Tutorials:
-      - tutorials/index.md
-      - NFC Read UID: tutorials/nfc-read-uid.md
-      - RGB Ring Patterns: tutorials/rgb-ring-patterns.md
-      - Wi-Fi AP Startup: tutorials/wifi-ap-startup.md
-      - Write NFC URL Tag: tutorials/nfc-write-url.md
+  - Hardware:
+      - hardware/overview.md
+      - Pinout: hardware/pinout.md
+      - ESP32: hardware/esp32.md
+      - SD Card: hardware/sd-card.md
+      - NFC: hardware/nfc.md
+      - Power: hardware/power.md
 
   - Software:
-      - software/index.md
-      - Library Overview: software/library-overview.md
-      - Example Sketches: software/example-sketches.md
-      - Configuration: software/configuration.md
-      - Partition Table: software/partition-table.md
+      - software/installation.md
+      - Firmware: software/firmware.md
+      - Arduino Setup: software/arduino-setup.md
+      - Libraries: software/libraries.md
+      - Updates: software/updates.md
 
-  - Pinout:
-      - pinout/index.md
-      - GPIO Reference: pinout/gpio-reference.md
-      - Board Layout: pinout/board-layout.md
+  - Features:
+      - features/wifi.md
+      - NFC Reader: features/nfc-reader.md
+      - SD Card: features/sd-card.md
+      - RGB: features/rgb.md
+      - Buzzer: features/buzzer.md
 
-  - Troubleshooting:
-      - troubleshooting/index.md
-      - Upload Issues: troubleshooting/upload-issues.md
-      - Wi-Fi Issues: troubleshooting/wifi-issues.md
-      - NFC Issues: troubleshooting/nfc-issues.md
-      - Serial Monitor: troubleshooting/serial-monitor.md
+  - Tutorials:
+      - tutorials/beginner.md
+      - Wi-Fi: tutorials/wifi.md
+      - NFC: tutorials/nfc.md
+      - SD Card: tutorials/sd-card.md
+      - RGB: tutorials/rgb.md
+      - Buzzer: tutorials/buzzer.md
+      - Advanced: tutorials/advanced.md
+
+  - Troubleshooting: troubleshooting.md
+  - FAQ: faq.md
 
   - Resources:
-      - resources/index.md
-      - Repository Links: resources/repository-links.md
-      - FAQ: resources/faq.md
-      - Legal & Ethical Use: resources/legal-ethical-use.md
-      - Adding Documentation: resources/adding-documentation.md
+      - resources/github.md
+      - Firmware: resources/firmware.md
+      - Schematics: resources/schematics.md
+      - Pinout: resources/pinout.md
+      - Datasheets: resources/datasheets.md
 
 extra:
   generator: false
+  firmware_version: "0.21.2"
+  firmware_repo: https://github.com/hardwarehackspace/HackCard-ESP32
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hardwarehackspace/hackcard-docs
-      name: HackCard Docs on GitHub
+      name: Documentation repository
 
-copyright: Copyright &copy; 2026 HackCard — Hardware documentation
+copyright: Copyright &copy; 2026 HackCard
