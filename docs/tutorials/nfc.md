@@ -115,6 +115,63 @@ nfc dump
 
 ---
 
+## Tutorial: Write vCard contact to external tag
+
+**Source:** `CliEngine::printNfcWrite()`, `HalNfc::writeNdefVcard()`
+
+| | |
+|---|---|
+| **Hardware** | Writable NTAG / Ultralight tag |
+| **Prerequisite** | Profile set via [Personalize Profile](beginner/personalize-profile.md) |
+| **Access** | Web terminal or `/nfc` |
+
+<div class="code-meta" markdown="1">
+
+**CLI command**
+
+</div>
+
+```text
+nfc write vcard
+```
+
+When prompted, hold a **blank** tag on the back of the PCB over the antenna.
+
+### Expected result
+
+```text
+vCard written for: Your Name
+```
+
+Phone NFC reader shows your contact when the **external tag** is tapped elsewhere.
+
+!!! note "Reader only"
+    HackCard writes to **external tags**. It does not emulate a contact card itself.
+
+---
+
+## Tutorial: Write plain text to tag
+
+```text
+nfc write text Hello from HackCard
+```
+
+**Expected result:** `NDEF text written: Hello from HackCard`
+
+---
+
+## Tutorial: NFC activity history
+
+```text
+nfc history
+```
+
+**Expected result:** Recent NFC reads/writes from `/nfc/history.csv` (when storage available).
+
+Web: `http://192.168.4.1/nfc`
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>

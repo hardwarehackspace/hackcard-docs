@@ -90,8 +90,46 @@ wifi ap set ssid MyHackCard pass mypass1234
 
 ---
 
-## Coming soon
+## Tutorial: Captive portal landing page
 
-<span class="coming-soon">Documentation coming soon</span>
+**Source:** `CliEngine::printWifiPortalStatus()`, `APP_WIFI_PORTAL`
 
-- Captive portal walkthrough
+| | |
+|---|---|
+| **Hardware** | HackCard + phone on AP |
+| **Prerequisite** | Connected to HackCard AP |
+| **Access** | Web terminal or Serial (if CLI enabled) |
+
+When the captive portal is **ON**, phones joining your AP may auto-open your profile landing page.
+
+### Enable portal
+
+```text
+wifi portal on
+wifi portal status
+```
+
+### Expected result
+
+```text
+── Captive Portal ──
+Enabled:  yes
+DNS:      running
+Landing:  http://192.168.4.1/portal
+```
+
+Open `http://192.168.4.1/portal` on a connected phone to preview the landing page.
+
+When ON, phones joining the AP auto-open your profile page (from `CliEngine` help text).
+
+### Disable portal
+
+```text
+wifi portal off
+```
+
+!!! tip "Profile content"
+    Landing page uses your owner profile from config. Personalize first → [Personalize Profile](beginner/personalize-profile.md).
+
+!!! warning "Lab feature — training portal"
+    `wifi training start <pin>` is a separate **lab-only** awareness portal. Requires lab PIN and authorized use only → [Advanced Tutorials](advanced.md).

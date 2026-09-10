@@ -130,6 +130,7 @@ nav:
       - Beginner — Diagnostics: tutorials/beginner/diagnostics.md
       - Beginner — Personalize Profile: tutorials/beginner/personalize-profile.md
       - Beginner — Device Modes: tutorials/beginner/device-modes.md
+      - Beginner — Activity Log: tutorials/beginner/activity-log.md
       - Wi-Fi: tutorials/wifi.md
       - NFC: tutorials/nfc.md
       - SD Card: tutorials/sd-card.md
@@ -138,6 +139,7 @@ nav:
       - Advanced: tutorials/advanced.md
       - Advanced — USB HID: tutorials/advanced/usb-hid.md
       - Advanced — BLE Contact: tutorials/advanced/ble-contact-card.md
+      - Advanced — NFC Dump + Clone: tutorials/advanced/nfc-dump-clone.md
 
   - Troubleshooting: troubleshooting.md
   - FAQ: faq.md

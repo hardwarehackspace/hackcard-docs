@@ -55,12 +55,44 @@ View via web `/logs` page or read file from SD on PC.
 
 ---
 
+## Tutorial: Override config with SD JSON
+
+**Source:** `ConfigStore.cpp`, [Storage & Logs](../software/storage-and-logs.md)
+
+| | |
+|---|---|
+| **Hardware** | HackCard + FAT32 microSD in Full Mode |
+| **Prerequisite** | `sd status` shows SD ready |
+
+### Steps
+
+1. Insert SD and wait for Full Mode (`Storage: SD card ready`)
+2. On PC, open the SD card — folder `/config` is auto-created
+3. Create or edit `/config/hackcard.json` (see JSON structure in [Storage & Logs](../software/storage-and-logs.md))
+4. Power-cycle HackCard (reset or unplug USB)
+5. Verify:
+
+```text
+config show
+sd status
+```
+
+### Expected result
+
+- Config loads from SD JSON instead of compiled `user_config.h` defaults
+- AP SSID, owner name, brightness, and lab PIN reflect JSON values
+- Changes persist across reboots without re-flashing
+
+!!! note "Priority"
+    SD JSON overrides compiled defaults. If SD is removed, firmware falls back to `user_config.h`.
+
+---
+
 ## Coming soon
 
 <span class="coming-soon">Documentation coming soon</span>
 
 - Standalone SD card test sketch
-- Config JSON override tutorial
 
 ---
 

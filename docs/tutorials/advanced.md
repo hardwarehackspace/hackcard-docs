@@ -13,6 +13,7 @@ Lab features for **authorized testing only**. Requires lab PIN (`LAB_MODE_PIN`).
 |----------|--------|
 | [USB HID Lab](advanced/usb-hid.md) | `README.md` |
 | [BLE Contact Card](advanced/ble-contact-card.md) | `README.md` |
+| [NFC Dump + Clone](advanced/nfc-dump-clone.md) | `NfcDumpApp`, `NfcLabApp` |
 
 ---
 
@@ -46,7 +47,6 @@ wifi monitor deauth
 
 - Evil twin walkthrough (authorized environments only)
 - Mifare Classic dump step-by-step
-- NFC dump + restore workflow
 
 ---
 
