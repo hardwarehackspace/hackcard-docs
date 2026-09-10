@@ -4,6 +4,21 @@ Firmware version history from the [HackCard-ESP32](https://github.com/hardwareha
 
 ---
 
+## v0.21.3 (examples pack)
+
+| Field | Source |
+|-------|--------|
+| Library | `library/HackCard` `0.21.3` |
+| Catalog | [`EXAMPLES.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/library/HackCard/EXAMPLES.md) |
+
+### Highlights
+
+- **46** Serial examples mirroring the web dashboard (`/nfc`, `/wifi`, `/ble`, `/hid`, `/apps`, `/diag`, …)
+- `Template_Custom_App` for backers building their own applications
+- Lab sketches gated with editable PIN + ethical-use notes
+
+---
+
 ## v0.21.2
 
 | Field | Source |

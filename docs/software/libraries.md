@@ -64,7 +64,7 @@ These ship with the ESP32 board package — no separate install:
 
 | Component | Version |
 |-----------|---------|
-| HackCard firmware / library | `0.21.2` |
+| HackCard firmware / library | Firmware `0.21.2` · Library examples `0.21.3` |
 | ESP32 Arduino core | 3.x recommended |
 | Adafruit NeoPixel / PN532 / BusIO | Latest stable from Library Manager |
 | ArduinoJson | Latest stable (full firmware) |

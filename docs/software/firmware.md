@@ -1,6 +1,6 @@
 # Firmware
 
-HackCard firmware is a monolithic Arduino sketch with modular apps, plus an Arduino **library** and **standalone examples**.
+HackCard firmware is a monolithic Arduino sketch with modular apps, plus an Arduino **library** and **standalone examples** that mirror the web dashboard.
 
 ---
 
@@ -16,7 +16,19 @@ HackCard firmware is a monolithic Arduino sketch with modular apps, plus an Ardu
 |-------|-------|--------|
 | `FIRMWARE_VERSION` | `0.21.2` | `config/board_config.h` |
 | Phase label | Phase 21 (HID Payload Pack) | `HackCard_ESP32.ino` header |
-| Library | `0.21.2` | `library/HackCard/library.properties` |
+| Library / examples | `0.21.3` | `library/HackCard/library.properties` |
+
+---
+
+## Two ways to use the code
+
+| Path | Best for |
+|------|----------|
+| **Full firmware** `HackCard_ESP32.ino` | Backers who want the phone web dashboard + every lab in one upload |
+| **Library examples** `library/HackCard/examples/` | Backers learning one feature, or building their own apps |
+
+Start building custom apps from **`00_Start_Here/Template_Custom_App`**.  
+Full web → sketch map: [`EXAMPLES.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/library/HackCard/EXAMPLES.md).
 
 ---
 
@@ -26,50 +38,45 @@ HackCard firmware is a monolithic Arduino sketch with modular apps, plus an Ardu
 HackCard-ESP32/
 ├── HackCard_ESP32.ino       ← Full firmware (web + CLI + all labs)
 ├── config/
-│   ├── board_config.h       ← Pin map (hardware)
-│   ├── user_config.h        ← Your settings
-│   └── app_registry.h       ← Feature compile switches
-├── partitions.csv           ← Flash layout
-├── src/                     ← HAL, apps, core
-├── library/HackCard/        ← Arduino library + examples
-└── docs/                    ← Setup guides
+├── partitions.csv
+├── src/
+└── library/HackCard/
+    ├── EXAMPLES.md          ← Web page → example map (backers)
+    ├── src/                 ← Pin map + HAL
+    └── examples/
+        ├── 00_Start_Here/   ← Template + feature map
+        ├── 01_Basics/       ← /apps
+        ├── 02_NFC/          ← /nfc
+        ├── 03_WiFi/         ← /wifi
+        ├── 04_BLE/          ← /ble
+        ├── 05_USB_HID/      ← /hid
+        ├── 05_Storage/
+        ├── 06_RealLife/
+        └── 07_System/       ← /diag /profile /modes /logs
 ```
 
 ---
 
-## Compile-time features
+## Example sketches (mirror the web app)
 
-From `config/app_registry.h` — all currently enabled (`1`):
+Install `library/HackCard`, then **File → Examples → HackCard**.
 
-| Category | Apps |
-|----------|------|
-| System | Web dashboard, diagnostics, logs, modes |
-| NFC | Read, info, dump, write, clone, kill, classic |
-| Wi-Fi | Scan, portal, AP control, beacon, evil twin, training, monitor |
-| BLE | Scan, advertise, contact card |
-| USB HID | Keyboard/mouse/media lab payloads |
+| Web page | Example folder |
+|----------|----------------|
+| `/nfc` | `02_NFC/*` (read, write, dump, erase, clone, kill, classic) |
+| `/wifi` | `03_WiFi/*` (scan, AP, connect, portal, beacon, twin, training, monitor) |
+| `/ble` | `04_BLE/*` |
+| `/hid` | `05_USB_HID/*` |
+| `/apps` | `01_Basics/*` |
+| `/diag` `/profile` `/modes` `/logs` | `07_System/*` |
 
-Disable any app by setting its `#define` to `0`.
+→ [Libraries](libraries.md) · [Firmware download](../resources/firmware.md)
 
 ---
 
-## Example sketches
+## Compile-time features (full firmware)
 
-Install `library/HackCard` into your Arduino libraries folder, then open **File → Examples → HackCard**.
-
-| Category | Sketches |
-|----------|----------|
-| Basics | Hello RGB Ring, Buzzer Tunes, BOOT Button, Wi-Fi Status LED |
-| NFC | Read UID, Tag Info, Write URL, Dump Type 2 |
-| Wi-Fi | Access Point, Scanner |
-| BLE | Advertise, Scanner |
-| USB HID | Type Hello |
-| Storage | SD Card Info |
-| Real life | Conference Badge Tap, Guest Portal, BLE Business Card, Desk Status Light |
-
-Examples use **Serial Monitor** (115200) — no web UI required. The full `HackCard_ESP32.ino` sketch remains the dashboard experience.
-
-→ [Library install notes](libraries.md) · [Firmware download](../resources/firmware.md)
+From `config/app_registry.h` — disable any `#define` by setting it to `0`.
 
 ---
 
@@ -77,7 +84,6 @@ Examples use **Serial Monitor** (115200) — no web UI required. The full `HackC
 
 | File | Purpose |
 |------|---------|
-| [`HackCard_ESP32.ino`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/HackCard_ESP32.ino) | Main firmware entry |
-| [`library/HackCard`](https://github.com/hardwarehackspace/HackCard-ESP32/tree/main/library/HackCard) | Library + examples |
-| [`app_registry.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/app_registry.h) | Feature toggles |
-| [`user_config.h`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/config/user_config.h) | User settings |
+| [`HackCard_ESP32.ino`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/HackCard_ESP32.ino) | Main firmware |
+| [`EXAMPLES.md`](https://github.com/hardwarehackspace/HackCard-ESP32/blob/main/library/HackCard/EXAMPLES.md) | Backer example map |
+| [`Template_Custom_App`](https://github.com/hardwarehackspace/HackCard-ESP32/tree/main/library/HackCard/examples/00_Start_Here/Template_Custom_App) | Fork to build your own app |
